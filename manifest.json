@@ -1,0 +1,31 @@
+{
+  "name": "Gestão Financeira",
+  "short_name": "Finanças",
+  "description": "Gestão financeira pessoal: saldos reais, previstos e orçamentos.",
+  "lang": "pt-PT",
+  "start_url": ".",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0A0C11",
+  "theme_color": "#3B38B8",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png?v=a633331164",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo192.png?v=a633331164",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo512.png?v=a633331164",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

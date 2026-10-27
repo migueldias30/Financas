@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <!-- viewport-fit=cover: iOS reports the safe areas (clock, home bar) so the app can keep the tab bar clear of them. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Gestão Financeira</title>
+    <!-- Installable on macOS/Windows (Chrome, Edge, Safari "Add to Dock"). No service worker:
+         financial data is never cached by the browser and updates are picked up on reload. -->
+    <link rel="manifest" href="/Financas/manifest.json?v=a633331164" />
+    <meta name="theme-color" content="#F4F5F8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0A0C11" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Finanças" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Financas/apple-touch-icon.png?v=a633331164" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/Financas/apple-touch-icon.png?v=a633331164" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/Financas/logo192.png?v=a633331164" />
+    <meta name="referrer" content="no-referrer" />
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+      /* Page colour = app background (iOS samples it for the status bar area and overscroll).
+         The app updates --app-bg when the theme changes (light/dark/manual choice). */
+      :root {
+        --app-bg: #f4f5f8;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --app-bg: #0a0c11;
+        }
+      }
+      html,
+      body {
+        background-color: var(--app-bg);
+      }
+      #status-bar-band {
+        display: none;
+      }
+      /* iPhone home-screen app (iOS 26+): */
+      @supports (-webkit-touch-callout: none) {
+        @media (display-mode: standalone) {
+          /* At launch WebKit reports a viewport one status bar shorter than the screen
+             (100%, 100dvh and innerHeight all wrong), so the app is sized explicitly. */
+          html,
+          body,
+          #root {
+            height: min(100lvh, calc(100dvh + env(safe-area-inset-top)));
+          }
+          /* iOS 27 blurs whatever is under the status bar unless a fixed, opaque element
+             (≥ 90% wide, > 10px tall) sits at the top to take the colour from; iOS then paints
+             the whole status bar area with it. 12px is enough and stays inside the status bar
+             on every iPhone (the smallest is 20px), so it never covers the app. Must stay
+             hit-testable (no pointer-events: none). */
+          #status-bar-band {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background-color: var(--app-bg);
+            z-index: 1;
+          }
+        }
+      }
+    </style>
+  <link rel="icon" href="/Financas/favicon.ico"/></head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+    <div id="status-bar-band"></div>
+  <script src="/Financas/_expo/static/js/web/entry-b743b4658ea270e8e81e0e033e2ee297.js" defer></script>
+</body>
+</html>
