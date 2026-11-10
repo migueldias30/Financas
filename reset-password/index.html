@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Gestão Financeira</title>
+    <link rel="manifest" href="/Financas/manifest.json?v=bfdaf5ffe4" />
+    <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Finanças" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Financas/apple-touch-icon.png?v=bfdaf5ffe4" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/Financas/apple-touch-icon.png?v=bfdaf5ffe4" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/Financas/logo192.png?v=bfdaf5ffe4" />
+    <meta name="referrer" content="no-referrer" />
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        overflow: hidden;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+      :root {
+        --app-bg: #f2f2f7;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --app-bg: #000000;
+        }
+      }
+      html,
+      body {
+        background-color: var(--app-bg);
+      }
+      #status-bar-band {
+        display: none;
+      }
+      @supports (-webkit-touch-callout: none) {
+        @media (display-mode: standalone) {
+          html,
+          body,
+          #root {
+            height: min(100lvh, calc(100dvh + env(safe-area-inset-top)));
+          }
+          #status-bar-band {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background-color: var(--app-bg);
+            z-index: 1;
+          }
+        }
+      }
+    </style>
+  <link rel="icon" href="/Financas/favicon.ico"/></head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <div id="status-bar-band"></div>
+  <script src="/Financas/_expo/static/js/web/entry-b74c7bddb7926af6aa2fb84a4a72a8a0.js" defer></script>
+</body>
+</html>
